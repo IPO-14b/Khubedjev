@@ -20,7 +20,7 @@ var height = game.getWH().h; // height of scene viewport
 var r = game.getResolution();
 
 
-pjs.system.setTitle('Happy New Year Game'); // Set Title for Tab or Window
+pjs.system.setTitle('Game'); // Set Title for Tab or Window
 
 game.newLoopFromConstructor('myGame', function () {
 
@@ -39,13 +39,21 @@ game.newLoopFromConstructor('myGame', function () {
 
   var djostik = game.newImageObject({
     file : 'djostik.png',
-    h : 100 * r, 
+//<<<<<<< lab4
+//    h : 100 * r, 
+//=======
+    h : 100 * r, // Оптимальный размер санты
+//>>>>>>> master
     onload : function () {
       // отпозиционируем его по высоте
       this.y = -this.h + height + 20*r; // Отлично
     }
   });
 
+//<<<<<<< lab4
+//=======
+  // Объявим массив с подарками
+//>>>>>>> master
   var points = [];
 
   var timer = OOP.newTimer(1000, function () {
@@ -66,15 +74,28 @@ game.newLoopFromConstructor('myGame', function () {
     game.clear(); // clear screen
 
     back.draw(); // Отрисуем фон
-    djostik.draw(); 
+//<<<<<<< lab4
+//    djostik.draw(); 
+//=======
+    djostik.draw(); // Отрисуем санту
+//>>>>>>> master
 
     timer.restart();
 
     OOP.forArr(points, function (el, i) { // i - идентификатор
-      el.draw(); 
+//<<<<<<< lab4
+//      el.draw(); 
+//
+//      el.move(point(0, speed*dt)); // Двигаем вниз
+//
+//=======
+      el.draw(); // Рисуем подарок
 
       el.move(point(0, speed*dt)); // Двигаем вниз
 
+      // Проверка на столкновение подарка с сантой
+
+//>>>>>>> master
       if (el.isIntersect(djostik)) {
         points.splice(i, 1); // i - идентификатор, 1 - количество
         score++; // Увеличиваем счет
