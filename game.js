@@ -41,7 +41,16 @@ game.newLoopFromConstructor('myGame', function () {
       this.y = -this.h + height + 20*r; // Отлично
     }
   });
+  var points = [];
 
+  var timer = OOP.newTimer(1000, function () {
+    podarki.push(game.newImageObject({
+      x : math.random(0, width - 50*r), // 50*r - ширина объекта
+      y : -math.random(50*r, 500*r), // уберем минус, так как он уже есть
+      w : 50*r, h : 50*r,
+      file : 'point.png'
+    }));
+  });
 });
 
 game.startLoop('myGame');
