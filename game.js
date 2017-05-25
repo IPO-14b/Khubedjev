@@ -63,10 +63,6 @@ game.newLoopFromConstructor('myGame', function () {
     back.draw(); // Отрисуем фон
     santa.draw(); // Отрисуем санту
 
-    // Алгоритм добавления подарков по таймеру
-    // новый подарок каждую секунду
-
-    // Для того, чтобы подарки добавлялись каждую секунду
     timer.restart();
 
     OOP.forArr(podarki, function (el, i) { // i - идентификатор
@@ -74,7 +70,6 @@ game.newLoopFromConstructor('myGame', function () {
 
       el.move(point(0, speed*dt)); // Двигаем вниз
 
-      // Проверка на столкновение подарка с сантой
 
       if (el.isIntersect(santa)) {
         podarki.splice(i, 1); // i - идентификатор, 1 - количество
@@ -83,6 +78,34 @@ game.newLoopFromConstructor('myGame', function () {
       }
 
     });
+
+    if (key.isDown('LEFT')) {
+      // Двигаем влево
+      if (santa.x >= 0)
+        santa.x -= speed * dt;
+    }
+
+    if (key.isDown('RIGHT')) {
+      // Двигаем влево
+      if (santa.x+santa.w < width)
+        santa.x += speed * dt;
+    }
+
+    // Отрисуем счет
+    brush.drawText({
+      x : 10, y : 10,
+      text : 'Счет: ' + score,
+      size : 50 * r,
+      color : '#FFFFFF',
+      strokeColor : 'black',
+      strokeWidth : 2,
+      style : 'bold',
+      font : 'Arial'
+    });
+
+  };
+
+  
 });
 
 game.startLoop('myGame');
