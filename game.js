@@ -1,5 +1,5 @@
 var pjs = new PointJS('2D', 1280 / 2, 720 / 2, { // 16:9
-	backgroundColor : '#53769A' // if need
+    backgroundColor : '#53769A' // if need
 });
 pjs.system.initFullPage(); // for Full Page mode
 
@@ -105,7 +105,12 @@ game.newLoopFromConstructor('myGame', function () {
 
   };
 
-  
+  this.entry = function () { // [optional]
+    // При входе в игру будем очищать подарки и удалять счет
+    OOP.clearArr(podarki);
+    score = 0;
+  };
+
 });
 
 game.startLoop('myGame');
