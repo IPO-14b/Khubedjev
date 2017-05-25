@@ -51,6 +51,38 @@ game.newLoopFromConstructor('myGame', function () {
       file : 'point.png'
     }));
   });
+
+  this.update = function () {
+
+    // Задействуем фактор дельта-тайм
+    var dt = game.getDT(10); // 10 - это делитель дкльты для
+    // удобного округления
+
+    game.clear(); // clear screen
+
+    back.draw(); // Отрисуем фон
+    santa.draw(); // Отрисуем санту
+
+    // Алгоритм добавления подарков по таймеру
+    // новый подарок каждую секунду
+
+    // Для того, чтобы подарки добавлялись каждую секунду
+    timer.restart();
+
+    OOP.forArr(podarki, function (el, i) { // i - идентификатор
+      el.draw(); // Рисуем подарок
+
+      el.move(point(0, speed*dt)); // Двигаем вниз
+
+      // Проверка на столкновение подарка с сантой
+
+      if (el.isIntersect(santa)) {
+        podarki.splice(i, 1); // i - идентификатор, 1 - количество
+        score++; // Увеличиваем счет
+        speed+= 0.01; // увеличиваем скорость
+      }
+
+    });
 });
 
 game.startLoop('myGame');
