@@ -33,6 +33,15 @@ game.newLoopFromConstructor('myGame', function () {
     file : 'background.jpg',
     h : height/1.5 * r // Растягивание фона под экран
   });
+
+  var djostik = game.newImageObject({
+    h : 200 * r, 
+    onload : function () {
+      // отпозиционируем его по высоте
+      this.y = -this.h + height + 20*r; // Отлично
+    }
+  });
+
 });
 
 game.startLoop('myGame');
