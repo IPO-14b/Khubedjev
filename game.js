@@ -21,6 +21,18 @@ pjs.system.setTitle('PointJS Game'); // Set Title for Tab or Window
 
 game.newLoopFromConstructor('myGame', function () {
 
+  // Объявим переменную скорости
+  var speed = 2*r;
+
+  // Объявим переменну счета
+  var score = 0;
+
+  // Первым делом создадим фон
+
+  var back = game.newImageObject({
+    file : 'background.jpg',
+    h : height/1.5 * r // Растягивание фона под экран
+  });
 });
 
 game.startLoop('myGame');
