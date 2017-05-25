@@ -25,7 +25,7 @@ pjs.system.setTitle('Game'); // Set Title for Tab or Window
 game.newLoopFromConstructor('myGame', function () {
 
   // Объявим переменную скорости
-  var speed = 2*r;
+  var speed = 5*r;
 
   // Объявим переменну счета
   var score = 0;
@@ -39,17 +39,23 @@ game.newLoopFromConstructor('myGame', function () {
 
   var djostik = game.newImageObject({
     file : 'djostik.png',
+//<<<<<<< lab4
+//    h : 100 * r, 
+//=======
     h : 100 * r, // Оптимальный размер санты
+//>>>>>>> master
     onload : function () {
       // отпозиционируем его по высоте
       this.y = -this.h + height + 20*r; // Отлично
     }
   });
 
+//<<<<<<< lab4
+//=======
   // Объявим массив с подарками
+//>>>>>>> master
   var points = [];
 
-  // Создадим таймер, который будет добавлять подарки
   var timer = OOP.newTimer(1000, function () {
     points.push(game.newImageObject({
       x : math.random(0, width - 50*r), // 50*r - ширина объекта
@@ -68,21 +74,28 @@ game.newLoopFromConstructor('myGame', function () {
     game.clear(); // clear screen
 
     back.draw(); // Отрисуем фон
+//<<<<<<< lab4
+//    djostik.draw(); 
+//=======
     djostik.draw(); // Отрисуем санту
+//>>>>>>> master
 
-    // Алгоритм добавления подарков по таймеру
-    // новый подарок каждую секунду
-
-    // Для того, чтобы подарки добавлялись каждую секунду
     timer.restart();
 
     OOP.forArr(points, function (el, i) { // i - идентификатор
+//<<<<<<< lab4
+//      el.draw(); 
+//
+//      el.move(point(0, speed*dt)); // Двигаем вниз
+//
+//=======
       el.draw(); // Рисуем подарок
 
       el.move(point(0, speed*dt)); // Двигаем вниз
 
       // Проверка на столкновение подарка с сантой
 
+//>>>>>>> master
       if (el.isIntersect(djostik)) {
         points.splice(i, 1); // i - идентификатор, 1 - количество
         score++; // Увеличиваем счет
@@ -90,9 +103,6 @@ game.newLoopFromConstructor('myGame', function () {
       }
 
     });
-
-    // Заставим двигатьcz санту
-    // Учтем ограничения движения
 
     if (key.isDown('LEFT')) {
       // Двигаем влево
