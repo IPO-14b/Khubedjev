@@ -25,7 +25,7 @@ pjs.system.setTitle('Game'); // Set Title for Tab or Window
 game.newLoopFromConstructor('myGame', function () {
 
   // Объявим переменную скорости
-  var speed = 5*r;
+  var speed = 3*r;
 
   // Объявим переменну счета
   var score = 0;
@@ -107,13 +107,13 @@ game.newLoopFromConstructor('myGame', function () {
     if (key.isDown('LEFT')) {
       // Двигаем влево
       if (djostik.x >= 0)
-        djostik.x -= speed * dt;
+        djostik.x -= 5 * dt;
     }
 
     if (key.isDown('RIGHT')) {
       // Двигаем влево
       if (djostik.x+djostik.w < width)
-        djostik.x += speed * dt;
+        djostik.x += 5 * dt;
     }
 
     // Отрисуем счет
