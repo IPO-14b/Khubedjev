@@ -54,7 +54,7 @@ pjs.game.newLoopFromConstructor('myGame', function () {
      *
      * Используется для определения счета
      *
-     * @var int $speed
+     * @var int $score
      */
     var score = 0;
 
