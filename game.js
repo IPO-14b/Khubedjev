@@ -39,7 +39,7 @@ var r = pjs.game.getResolution();
 
 pjs.system.setTitle('Game'); // Set Title for Tab or Window
 
-pjs.game.newLoopFromConstructor('myGame', function () {
+pjs.game.newLoopFromConstructor('myGame', function () { // Обьявляем игровой цикл и задаем ему найменование и конструктор
 
       /**
      * Скорость
@@ -160,14 +160,16 @@ pjs.game.newLoopFromConstructor('myGame', function () {
 
         if (pjs.keyControl.initKeyControl().isDown('LEFT')) {
             // Двигаем влево
-            if (djostik.x >= 0)
+            if (djostik.x >= 0){
                 djostik.x -= 5 * dt;
+            }
         }
 
         if (pjs.keyControl.initKeyControl().isDown('RIGHT')) {
-          // Двигаем влево
-            if (djostik.x+djostik.w < width)
+          // Двигаем вправо
+            if (djostik.x+djostik.w < width){
                 djostik.x += 5 * dt;
+            }
         }
 
         // Отрисуем счет
