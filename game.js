@@ -38,8 +38,13 @@ var r = pjs.game.getResolution();
 
 
 pjs.system.setTitle('Game'); // Set Title for Tab or Window
-
-pjs.game.newLoopFromConstructor('myGame', function () { // Обьявляем игровой цикл и задаем ему найменование и конструктор
+/**
+* Функция отвечающая за игровой цикл
+*
+* Функция, которая отвечает за игровой цикл
+*/
+pjs.game.newLoopFromConstructor('myGame', function () { 
+    // Обьявляем игровой цикл и задаем ему найменование и конструктор
 
       /**
      * Скорость
