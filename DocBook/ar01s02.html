@@ -1,0 +1,24 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>&#1055;&#1088;&#1080;&#1084;&#1077;&#1088; 2: &#1050;&#1086;&#1085;&#1090;&#1088;&#1086;&#1083;&#1100; &#1076;&#1078;&#1086;&#1089;&#1090;&#1080;&#1082;&#1072; &#1082;&#1085;&#1086;&#1087;&#1082;&#1072;&#1084;&#1080;</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="Noname1.html" title="Appendix A. "><link rel="up" href="ar01.html" title="ZeroRain"><link rel="prev" href="ar01.html" title="ZeroRain"><link rel="next" href="ar01s03.html" title="&#1055;&#1088;&#1080;&#1084;&#1077;&#1088; 3: &#1046;&#1080;&#1079;&#1085;&#1077;&#1085;&#1099;&#1081; &#1094;&#1080;&#1082;&#1083;"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">&#1055;&#1088;&#1080;&#1084;&#1077;&#1088; 2: &#1050;&#1086;&#1085;&#1090;&#1088;&#1086;&#1083;&#1100; &#1076;&#1078;&#1086;&#1089;&#1090;&#1080;&#1082;&#1072; &#1082;&#1085;&#1086;&#1087;&#1082;&#1072;&#1084;&#1080;</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01.html">Prev</a> </td><th width="60%" align="center">ZeroRain</th><td width="20%" align="right"> <a accesskey="n" href="ar01s03.html">Next</a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id587878"></a>&#1055;&#1088;&#1080;&#1084;&#1077;&#1088; 2: &#1050;&#1086;&#1085;&#1090;&#1088;&#1086;&#1083;&#1100; &#1076;&#1078;&#1086;&#1089;&#1090;&#1080;&#1082;&#1072; &#1082;&#1085;&#1086;&#1087;&#1082;&#1072;&#1084;&#1080;</h2></div></div></div><p>&#1048;&#1085;&#1080;&#1094;&#1080;&#1072;&#1083;&#1080;&#1079;&#1080;&#1088;&#1091;&#1077;&#1084; &#1087;&#1077;&#1088;&#1077;&#1084;&#1077;&#1085;&#1085;&#1091;&#1102; &#1086;&#1082;&#1088;&#1091;&#1078;&#1077;&#1085;&#1080;&#1103;. </p><p>&#1057;&#1086;&#1079;&#1076;&#1072;&#1077;&#1084; &#1076;&#1078;&#1086;&#1089;&#1090;&#1080;&#1082;. </p><p>&#1054;&#1090;&#1088;&#1080;&#1089;&#1086;&#1074;&#1099;&#1074;&#1072;&#1077;&#1084; &#1076;&#1078;&#1086;&#1089;&#1090;&#1080;&#1082;.</p><p>&#1054;&#1090;&#1083;&#1072;&#1074;&#1083;&#1080;&#1074;&#1072;&#1077;&#1084; &#1085;&#1072;&#1078;&#1072;&#1090;&#1080;&#1077; &#1089;&#1090;&#1088;&#1077;&#1083;&#1086;&#1095;&#1082;&#1080; &#1074;&#1083;&#1077;&#1074;&#1086; &#1080;&#1083;&#1080; &#1074;&#1087;&#1088;&#1072;&#1074;&#1072;.</p><p>&#1048;&#1079;&#1084;&#1077;&#1085;&#1103;&#1077;&#1084; &#1087;&#1086;&#1083;&#1086;&#1078;&#1077;&#1085;&#1080;&#1077; &#1076;&#1078;&#1086;&#1089;&#1090;&#1080;&#1082;&#1072;.</p><pre class="programlisting"> 
+    var pjs = new PointJS('2D', 800, 600, { backgroundColor: '#DDDDDD' });
+    var djostik = pjs.game.newImageObject({
+        file : 'djostik.png',
+        h : 100 * r, 
+        onload : function () {
+            this.y = -this.h + height + 20*r;
+        }
+    });
+    djostik.draw();
+        if (pjs.keyControl.initKeyControl().isDown('LEFT')) {
+            // &#1044;&#1074;&#1080;&#1075;&#1072;&#1077;&#1084; &#1074;&#1083;&#1077;&#1074;&#1086;
+            if (djostik.x &gt;= 0){
+                djostik.x -= 5 * dt;
+            }
+        }
+
+        if (pjs.keyControl.initKeyControl().isDown('RIGHT')) {
+          // &#1044;&#1074;&#1080;&#1075;&#1072;&#1077;&#1084; &#1074;&#1087;&#1088;&#1072;&#1074;&#1086;
+            if (width &gt; djostik.x+djostik.w){
+                djostik.x += 5 * dt;
+            }
+        }
+    </pre></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ar01.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ar01s03.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">ZeroRain </td><td width="20%" align="center"><a accesskey="h" href="Noname1.html">Home</a></td><td width="40%" align="right" valign="top"> &#1055;&#1088;&#1080;&#1084;&#1077;&#1088; 3: &#1046;&#1080;&#1079;&#1085;&#1077;&#1085;&#1099;&#1081; &#1094;&#1080;&#1082;&#1083;</td></tr></table></div></body></html>
