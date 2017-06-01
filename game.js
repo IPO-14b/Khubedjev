@@ -61,7 +61,7 @@ pjs.game.newLoopFromConstructor('myGame', function () {
      *
      * @var int $score
      */
-    var score = 0;
+    var score = 1;
 
     // Первым делом создадим фон
 
